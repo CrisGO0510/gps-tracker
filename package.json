@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --configuration production --base-href 'https://CrisGO0510.github.io/gps-tracker/' && npx angular-cli-ghpages --dir=dist/gps-tracker/browser --branch=gh-pages"
   },
   "prettier": {
     "overrides": [
