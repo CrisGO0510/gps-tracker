@@ -29,18 +29,6 @@ El mapa se actualiza automáticamente cada vez que Firebase recibe nuevos datos 
 
 ---
 
-## Estructura del proyecto
-
-src/
-├─ app/
-│  ├─ map/          # Componente del mapa en tiempo real
-│  └─ services/     # Servicio para obtener datos GPS de Firebase
-├─ assets/          # Iconos y recursos del mapa
-├─ environments/    # Configuración de Firebase
-└─ styles.scss      # Estilos globales
-
----
-
 ## Cómo usarlo
 
 1. Configurar tu **ESP32** para enviar coordenadas a Firebase.
