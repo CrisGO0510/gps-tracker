@@ -1,59 +1,84 @@
-# GpsTracker
+```markdown
+# GPS Tracker en Tiempo Real
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Este proyecto es una **interfaz web para un GPS basado en ESP32** que envía coordenadas a **Firebase Realtime Database**, y las visualiza en **tiempo real** mediante un mapa interactivo.
 
-## Development server
+La página web está disponible en:  
+[https://crisgo0510.github.io/gps-tracker/](https://crisgo0510.github.io/gps-tracker/)
 
-To start a local development server, run:
+---
+
+## Descripción
+
+El proyecto permite:
+
+- Leer las coordenadas GPS enviadas por un **ESP32**.  
+- Almacenar los datos en **Firebase Realtime Database**.  
+- Mostrar la ubicación actual en un **mapa interactivo** en tiempo real.  
+- Centrar el mapa sobre el marcador mediante un **botón flotante**.  
+
+El mapa se actualiza automáticamente cada vez que Firebase recibe nuevos datos del ESP32, sin necesidad de recargar la página ni hacer polling constante.
+
+---
+
+## Tecnologías utilizadas
+
+- **Angular 20**: Framework frontend para la interfaz web.  
+- **AngularFire / Firebase SDK**: Para conectarse a Firebase Realtime Database en tiempo real.  
+- **Leaflet**: Librería de mapas para mostrar la ubicación GPS.  
+- **ESP32**: Microcontrolador que envía coordenadas GPS a Firebase.
+
+---
+
+## Estructura del proyecto
+
+```
+
+src/
+├─ app/
+│  ├─ map/          # Componente del mapa en tiempo real
+│  └─ services/     # Servicio para obtener datos GPS de Firebase
+├─ assets/          # Iconos y recursos del mapa
+├─ environments/    # Configuración de Firebase
+└─ styles.scss      # Estilos globales
+
+````
+
+---
+
+## Cómo usarlo
+
+1. Configurar tu **ESP32** para enviar coordenadas a Firebase.  
+2. Configurar Firebase Realtime Database y actualizar `environment.ts` con tus credenciales.  
+3. Instalar dependencias:
+
+```bash
+npm install
+````
+
+4. Levantar la aplicación en desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+5. Abrir la página en tu navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+6. Verás el mapa con la ubicación en tiempo real del ESP32 y podrás centrar el marcador usando el botón flotante.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## Publicación
 
-To build the project run:
+El proyecto está publicado en GitHub Pages:
+[https://crisgo0510.github.io/gps-tracker/](https://crisgo0510.github.io/gps-tracker/)
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Licencia
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la licencia MIT.
